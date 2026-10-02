@@ -1,12 +1,14 @@
-# PKLM Sandbox (pklm-sandbox)
-
 <div align="center">
+  <img src="assets/TIP_Logo_Square.jpg" width="150" alt="TIP Logo">
+  
+  <p><b>PKLM Sandbox</b></p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://github.com/TheImmortalPython/pklm-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/TheImmortalPython/pklm-sandbox/actions)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![GitHub stars](https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social)](https://github.com/TheImmortalPython/pklm-sandbox/stargazers)
-
+  <p>
+    <a href="https://github.com/TheImmortalPython/pklm-sandbox/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT"></a>
+    <a href="https://github.com/TheImmortalPython/pklm-sandbox/actions"><img src="https://github.com/TheImmortalPython/pklm-sandbox/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
+    <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
+    <img src="https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social" alt="GitHub Stars">
+  </p>
 </div>
 
 Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face logits processing and zero-drift linguistic containment.
