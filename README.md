@@ -1,8 +1,13 @@
 # PKLM Sandbox (pklm-sandbox)
 
+<div align="center">
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/TheImmortalPython/pklm-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/TheImmortalPython/pklm-sandbox/actions)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![GitHub stars](https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social)](https://github.com/TheImmortalPython/pklm-sandbox/stargazers)
+
+</div>
 
 Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face logits processing and zero-drift linguistic containment.
 
