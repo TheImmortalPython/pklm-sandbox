@@ -15,20 +15,34 @@ Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face l
 
 ## Installation
 
+To install locally from source:
+
+```
 pip install .
+```
+
+To pull and install directly from the repository for offline or edge tool deployments:
+
+```
+pip install git+https://github.com/TheImmortalPython/pklm-sandbox.git
+```
 
 ## Quickstart
 
 Integrate the sandbox processor into your local pipeline:
 
+```
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pklm_sandbox.processor import PKLMSandboxProcessor
 
 processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+```
 
 ## Example: Initialize processor with tokens to restrict
 
+```
 processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+```
 
 ## Enterprise and Production Deployments
 
