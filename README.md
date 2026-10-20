@@ -52,6 +52,12 @@ For high-stakes enterprise environments, custom token-level constraint modeling,
 
 Contact: theimmortalpythonlabs@proton.me
 
+---
+
+> **Repositories:** `pklm-core` (Private) | `pklm-sandbox` | `determinism-runtime-core` (Private) | [the-nsai-guide](https://github.com/TheImmortalPython/the-nsai-guide)
+
+---
+
 ## License
 
 Distributed under the MIT License. See LICENSE for more information.
