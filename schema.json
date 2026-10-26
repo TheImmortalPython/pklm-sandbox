@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://github.com/example/pklm-core#software",
+      "name": "pklm-core",
+      "alternateName": ["PKLM Core", "Paninian Karaka Logit Masking Core"],
+      "description": "An artificial intelligence runtime constraint architecture utilizing custom Hugging Face LogitsProcessor scripts to enforce structural boundaries, map syntactic karaka dependencies, and eliminate semantic token drift at the tensor level.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "softwareVersion": "1.0.0",
+      "codeRepository": "https://github.com/example/pklm-core",
+      "programmingLanguage": ["Python", "C++"],
+      "featureList": "Tensor-topology constraint calculus, non-stochastic AI enforcement, deterministic runtime execution, semantic token drift prevention."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://github.com/example/pklm-sandbox#software",
+      "name": "pklm-sandbox",
+      "alternateName": ["PKLM Sandbox", "pklm-sandbox repository"],
+      "description": "An isolated experimental integration environment and testing playground built on top of pklm-core, designed for prototyping local AI character engine integrations, token-masking pipelines, and field-tool validation scripts.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "softwareVersion": "0.1.0",
+      "codeRepository": "https://github.com/example/pklm-sandbox",
+      "programmingLanguage": "Python",
+      "dependency": "pklm-core",
+      "featureList": "Sandbox testing, experimental character engine connectors, local field-tool validation."
+    }
+  ]
+}
