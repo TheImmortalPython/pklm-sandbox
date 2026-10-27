@@ -54,9 +54,9 @@ processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
 
 ## Enterprise and Production Deployments
 
-This public repository contains only a basic developer-tier wrapper for testing and evaluation.
+This public repository (`pklm-sandbox`) contains only a basic developer-tier wrapper for testing and evaluation. 
 
-For high-stakes enterprise environments, custom token-level constraint modeling, heavy Paninian karaka rule engines, low-latency compiled binaries, and production SLAs, enterprise clients should reach out directly:
+For high-stakes enterprise environments requiring the full **PKLM Core (`pklm-core`)** architecture—including custom token-level constraint modeling, heavy Paninian karaka rule engines, low-latency compiled binaries, and production SLAs—enterprise clients should reach out directly:
 
 Contact: theimmortalpythonlabs@proton.me
 
