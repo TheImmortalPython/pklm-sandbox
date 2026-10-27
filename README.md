@@ -13,6 +13,14 @@
 
 Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face logits processing and zero-drift linguistic containment.
 
+## Community Benefits
+
+PKLM Sandbox benefits the AI community by solving immediate friction points for developers building deterministic, safe software:
+
+* **Open-Source Accessibility:** Gives independent developers a completely free, open starting point to test token-level control without needing to build complex custom logits interception code from scratch.
+* **Safer AI Experimentation:** Acts as a safe testing ground for **zero-drift linguistic containment**. It lets engineers experiment with rules that completely block harmful, repetitive, or broken token paths before a model ever goes live.
+* **Bridging the Gap to Enterprise Tech:** Serves as a public playground to evaluate how structured constraints work firsthand, demonstrating the mechanics behind its private enterprise counterpart, **PKLM Core**.
+
 ## Installation
 
 To install locally from source:
