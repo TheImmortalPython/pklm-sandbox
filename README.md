@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/TIP_Logo_Square.jpg" width="150" alt="TIP Logo">
   
-  <p><b>PKLM Sandbox</b></p>
+  <p><h1>PKLM Sandbox</h1></p>
 
   <p>
     <a href="https://github.com/TheImmortalPython/pklm-sandbox/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT"></a>
