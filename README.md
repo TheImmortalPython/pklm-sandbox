@@ -58,17 +58,33 @@ pip install git+https://github.com/TheImmortalPython/pklm-sandbox.git
 
 ```
 
-## Quickstart
+## Quickstart & Usage
 
-Integrate the sandbox processor into your local pipeline:
+To apply the sandbox processor during generation, pass it into the `logits_processor` argument of the `.generate()` method using a `LogitsProcessorList`:
 
 ```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, LogitsProcessorList
 from pklm_sandbox.processor import PKLMSandboxProcessor
 
-processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+# 1. Load model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
 
-```
+# 2. Instantiate your custom processor with the token IDs you want to block
+sandbox_processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+
+# 3. Add it to a LogitsProcessorList
+processors = LogitsProcessorList([sandbox_processor])
+
+# 4. Tokenize inputs and pass the processor to generate()
+inputs = tokenizer("Hello, world!", return_tensors="pt")
+outputs = model.generate(
+    **inputs,
+    max_new_tokens=50,
+    logits_processor=processors
+)
+
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ## Example: Initialize processor with tokens to restrict
 
