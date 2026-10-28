@@ -13,6 +13,6 @@ class PKLMSandboxProcessor(LogitsProcessor):
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:
         if self.blocked_token_ids:
-            for token_id in self.blocked_token_ids:
-                scores[:, token_id] = -float("inf")
+            # Vectorized assignment across batch dimension avoids Python loop overhead
+            scores[:, self.blocked_token_ids] = -float("inf")
         return scores
