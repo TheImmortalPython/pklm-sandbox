@@ -45,7 +45,7 @@ pip install .
 To pull and install directly from the repository for offline or edge tool deployments:
 
 ```bash
-pip install git+[https://github.com/TheImmortalPython/pklm-sandbox.git](https://github.com/TheImmortalPython/pklm-sandbox.git)
+pip install git+https://github.com/TheImmortalPython/pklm-sandbox.git
 
 ```
 
