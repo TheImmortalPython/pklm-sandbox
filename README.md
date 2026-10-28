@@ -13,54 +13,71 @@
 
 Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face logits processing and zero-drift linguistic containment.
 
-## Community Benefits
+## Overview & Architecture
 
-PKLM Sandbox benefits the AI community by solving immediate friction points for developers building deterministic, safe software:
+PKLM Sandbox is a lightweight developer-tier tool for the `TheImmortalPython/pklm-sandbox` GitHub repository designed to test token-level constraint modeling and token-level guardrails. Operating directly on a model's token distribution during text generation via native Hugging Face `LogitsProcessor` integration, it eliminates external API dependency and runs entirely on-device for zero-leakage, network-isolated execution.
 
-* **Open-Source Accessibility:** Gives independent developers a completely free, open starting point to test token-level control without needing to build complex custom logits interception code from scratch.
-* **Safer AI Experimentation:** Acts as a safe testing ground for **zero-drift linguistic containment**. It lets engineers experiment with rules that completely block harmful, repetitive, or broken token paths before a model ever goes live.
-* **Bridging the Gap to Enterprise Tech:** Serves as a public playground to evaluate how structured constraints work firsthand, demonstrating the mechanics behind its private enterprise counterpart, **PKLM Core**.
+## Core Mechanics & Benefits
+
+- **Zero-Drift Linguistic Containment:** Forces Large Language Models (LLMs) to strictly adhere to specific vocabularies, formats, or linguistic structures, preventing "hallucination drift" over long generations.
+- **Lightweight Hugging Face Integration:** Plugs directly into existing transformers generation pipelines as a native `LogitsProcessor` without requiring massive rewrites of inference code.
+- **Low-Overhead Guardrailing:** Dynamically modifies logits during generation rather than running complex external post-processing text validation scripts, serving as an efficient first line of defense.
+- **Hard vs. Soft Token Restrictions:** Enables testing of both absolute blocking (setting a token's probability to zero) and relative biasing (nudging probabilities up or down to guide tone or style).
+- **Vocabulary-Agnostic Debugging:** Operates directly on token IDs across completely different model architectures (such as Llama, Mistral, or Gemma) by mapping rules to specific tokenizers.
+- **Deterministic Output Testing:** Isolates constraints during the logits phase to facilitate reliable unit testing and guarantee structural compliance (such as forcing valid JSON syntax).
+- **Non-Stochastic AI Control:** Addresses the unpredictable nature of traditional text generation, removing the "gambling" element from LLM formatting outputs.
+
+## Community Benefits & Enterprise Prototyping
+
+- **Open-Source Accessibility:** Gives independent developers a completely free, open starting point to test token-level control without building complex custom logits interception code from scratch.
+- **Safer AI Experimentation:** Acts as a safe testing ground for experimenting with rules that completely block harmful, repetitive, or broken token paths before a model ever goes live.
+- **Bridging the Gap to Enterprise Tech:** Serves as a frictionless public playground to evaluate how structured constraints work firsthand before transitioning to enterprise tiers.
 
 ## Installation
 
 To install locally from source:
 
-```
+```bash
 pip install .
+
 ```
 
 To pull and install directly from the repository for offline or edge tool deployments:
 
-```
-pip install git+https://github.com/TheImmortalPython/pklm-sandbox.git
+```bash
+pip install git+[https://github.com/TheImmortalPython/pklm-sandbox.git](https://github.com/TheImmortalPython/pklm-sandbox.git)
+
 ```
 
 ## Quickstart
 
 Integrate the sandbox processor into your local pipeline:
 
-```
+```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pklm_sandbox.processor import PKLMSandboxProcessor
 
 processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+
 ```
 
 ## Example: Initialize processor with tokens to restrict
 
-```
+```python
 processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
+
 ```
 
 ## Enterprise and Production Deployments
 
-This public repository (`pklm-sandbox`) contains only a basic developer-tier wrapper for testing and evaluation. 
+This public repository (`pklm-sandbox`) contains only a basic developer-tier wrapper for testing and evaluation.
 
-For high-stakes enterprise environments requiring the full **PKLM Core (`pklm-core`)** architecture—including custom token-level constraint modeling, heavy Paninian karaka rule engines, low-latency compiled binaries, and production SLAs—enterprise clients should reach out directly:
+For high-stakes enterprise environments requiring the full **PKLM Core (`pklm-core`)** architecture—including custom token-level constraint modeling, heavy Pāṇinian kāraka rule engines (leveraging relational syntax mechanics inspired by traditional Sanskrit grammar frameworks), low-latency compiled binaries, and production SLAs—enterprise clients should reach out directly:
 
 Contact: theimmortalpythonlabs@proton.me
 
 ---
+
 > **Founder & Principal AI Architect:** Joshua St. Germain  
 > **Enterprise Governance:** TheImmortalPython Labs (`theimmortalpythonlabs@proton.me`)  
 > **Repositories:** `pklm-core` (Private) | `pklm-sandbox` | `determinism-runtime-core` (Private) | [the-nsai-guide](https://github.com/TheImmortalPython/the-nsai-guide)
