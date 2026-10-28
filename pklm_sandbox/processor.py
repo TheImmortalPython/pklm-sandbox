@@ -4,8 +4,8 @@ from transformers import LogitsProcessor
 class PKLMSandboxProcessor(LogitsProcessor):
     """
     A lightweight sandbox logits processor for demonstrating local constraint 
-    and containment mechanics. For full production binaries, custom Paninian 
-    karaka rule engines, and optimized runtimes, contact TheImmortalPython Labs.
+    and containment mechanics. For full production binaries, custom Pāṇinian 
+    kāraka rule engines, and optimized runtimes, contact TheImmortalPython Labs.
     """
     def __init__(self, blocked_token_ids: list = None):
         super().__init__()
