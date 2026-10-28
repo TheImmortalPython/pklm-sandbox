@@ -17,6 +17,15 @@ Official open-source sandbox for PKLM Core, featuring lightweight Hugging Face l
 
 PKLM Sandbox is a lightweight developer-tier tool for the `TheImmortalPython/pklm-sandbox` GitHub repository designed to test token-level constraint modeling and token-level guardrails. Operating directly on a model's token distribution during text generation via native Hugging Face `LogitsProcessor` integration, it eliminates external API dependency and runs entirely on-device for zero-leakage, network-isolated execution.
 
+## Under the Hood
+
+PKLM Sandbox operates by intercepting the model's token prediction pipeline before sampling occurs:
+
+- **Token Interception:** It takes a list of vocabulary token IDs (`blocked_token_ids`) that you want to restrict.
+- **Probability Masking:** During generation, it targets the score matrix and forces the log-probability of those banned tokens to negative infinity (`-float("inf")`).
+- **Zero Probability Enforcement:** When the model applies softmax to these scores to select the next token, a score of `-inf` results in a 0% probability, ensuring the model never selects those paths.
+- **Vectorized Performance:** Using PyTorch's native tensor indexing (`scores[:, self.blocked_token_ids] = -float("inf")`) avoids slow Python-level loops during inference, maintaining low-latency execution.
+
 ## Core Mechanics & Benefits
 
 - **Zero-Drift Linguistic Containment:** Forces Large Language Models (LLMs) to strictly adhere to specific vocabularies, formats, or linguistic structures, preventing "hallucination drift" over long generations.
