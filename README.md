@@ -7,7 +7,9 @@
     <a href="https://github.com/TheImmortalPython/pklm-sandbox/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License: MIT"></a>
     <a href="https://github.com/TheImmortalPython/pklm-sandbox/actions"><img src="https://github.com/TheImmortalPython/pklm-sandbox/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI Status"></a>
     <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
-    <img src="https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social" alt="GitHub Stars">
+      <a href="https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social">
+  <img src="https://img.shields.io/github/stars/TheImmortalPython/pklm-sandbox?style=social" alt="GitHub Stars">
+</a>
   </p>
 </div>
 
