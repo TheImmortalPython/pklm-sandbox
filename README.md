@@ -95,8 +95,6 @@ processor = PKLMSandboxProcessor(blocked_token_ids=[50256])
 
 ```
 
-This public repository (`pklm-sandbox`) contains only a basic developer-tier wrapper for testing and evaluation.
-
 ---
 
 > **Founder & Principal AI Architect:** Joshua St. Germain  
